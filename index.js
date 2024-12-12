@@ -1,30 +1,30 @@
 import {
-	parsers as htmlParsers,
-	printers as htmlPrinters,
+  parsers as htmlParsers,
+  printers as htmlPrinters,
 } from "prettier/plugins/html";
 
 const htmlPrinter = htmlPrinters.html;
 
 const customHtmlPrinter = {
-	...htmlPrinter,
+  ...htmlPrinter,
 
-	print(path, options, print) {
-		const node = path.getValue();
+  print(path, options, print) {
+    const node = path.getValue();
 
-		// Check if the current node is a HTML5 doctype and transform it to uppercase
-		if (node && node.type === "docType" && node.value === "html") {
-			return "<!DOCTYPE html>";
-		}
+    // Check if the current node is a HTML5 doctype and transform it to uppercase
+    if (node && node.type === "docType" && node.value === "html") {
+      return "<!DOCTYPE html>";
+    }
 
-		// Keep the default behavior for other nodes
-		return htmlPrinter.print(path, options, print);
-	},
+    // Keep the default behavior for other nodes
+    return htmlPrinter.print(path, options, print);
+  },
 };
 
 export const parsers = {
-	...htmlParsers,
+  ...htmlParsers,
 };
 
 export const printers = {
-	html: customHtmlPrinter,
+  html: customHtmlPrinter,
 };
