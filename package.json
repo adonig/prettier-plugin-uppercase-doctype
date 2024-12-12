@@ -1,0 +1,20 @@
+{
+	"name": "prettier-plugin-uppercase-doctype",
+	"version": "1.0.0",
+	"description": "A Prettier plugin that transforms <!doctype html> to <!DOCTYPE html>.",
+	"main": "index.js",
+	"type": "module",
+	"author": "Andreas Donig <github@innwiese.de>",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/adonig/prettier-plugin-uppercase-doctype.git"
+	},
+	"keywords": ["prettier", "plugin", "html", "doctype", "uppercase"],
+	"dependencies": {
+		"prettier": "^3.0.0"
+	},
+	"peerDependencies": {
+		"prettier": "^3.0.0"
+	}
+}
